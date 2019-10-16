@@ -1,7 +1,11 @@
-import { TEST_TYPE } from '../actions/types'
+import { 
+    TEST_TYPE,
+    INCREMENT
+ } from '../actions/types'
 
 const initialState = {
-    test: true
+    test: 'test redux',
+    count: 0
 }
 
 export default function reduce(state = initialState, action) {
@@ -9,6 +13,11 @@ export default function reduce(state = initialState, action) {
         case TEST_TYPE:
             return {
                 ...state
+            }
+        case INCREMENT:
+            return {
+                ...state,
+                count: state.count + 1
             }
         default:
             return state;
